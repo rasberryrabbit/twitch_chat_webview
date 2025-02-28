@@ -46,7 +46,7 @@ $("#chatbox").on('scroll', function(){
   var scrollHeight = pageHeight * 0.2;
   doscroll=1;
   if (height > pageHeight) {
-      if (itemHeight<=0 || height-curpos-pageHeight < scrollHeight) {
+      if (height-curpos-pageHeight < scrollHeight) {
         doscroll=1;
       } else {
         doscroll=0;
