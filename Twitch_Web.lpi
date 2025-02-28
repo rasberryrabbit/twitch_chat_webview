@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="Twitch_Web"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="9"/>
+      <BuildNr Value="7"/>
+    </VersionInfo>
+    <BuildModes>
+      <Item Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="WebView4Delphi"/>
+      </Item>
+      <Item>
+        <PackageName Value="JvXPCtrlsLazR"/>
+      </Item>
+      <Item>
+        <PackageName Value="JvXPCtrlsLazD"/>
+      </Item>
+      <Item>
+        <PackageName Value="JvJansLazR"/>
+      </Item>
+      <Item>
+        <PackageName Value="JvJansLazD"/>
+      </Item>
+      <Item>
+        <PackageName Value="ExceptionLogger"/>
+      </Item>
+      <Item>
+        <PackageName Value="rxnew"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="uniqueinstance_package"/>
+      </Item>
+      <Item>
+        <PackageName Value="mormot2"/>
+      </Item>
+      <Item>
+        <PackageName Value="dcpcrypt_laz"/>
+      </Item>
+      <Item>
+        <PackageName Value="dcpcrypt"/>
+      </Item>
+      <Item>
+        <PackageName Value="CEF4Delphi_Lazarus"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="Twitch_Web.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="twitchweb_main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormTwitchWeb"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Twitchweb_main"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uchecksumlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uChecksumList"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Twitch_Web"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <Libraries Value="C:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;C:\fpcupdeluxe\extras\mormot\static\i386-win32\"/>
+      <OtherUnitFiles Value="C:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;C:\fpcupdeluxe\extras\mormot\src\net\;C:\fpcupdeluxe\extras\mormot\src\crypt\;C:\fpcupdeluxe\extras\mormot\src\core\;C:\fpcupdeluxe\extras\WebView4Delphi\packages\"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Checks>
+        <StackChecks Value="True"/>
+      </Checks>
+      <TargetProcessor Value="pentiumm"/>
+      <Optimizations>
+        <OptimizationLevel Value="2"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
