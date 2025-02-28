@@ -189,7 +189,7 @@ var
   ir, i: Integer;
   port: string;
 begin
-  ir:=InputCombo('웹소켓 포트','웹소켓 포트를 지정',['61002','61010','61020','61030','61040']);
+  ir:=InputCombo('WebSocket port','Choose WebSocket port',['61002','61010','61020','61030','61040']);
   case ir of
   0: WSPortChat:='61002';
   1: WSPortChat:='61010';

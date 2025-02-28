@@ -17,7 +17,7 @@ object FormTwitchWeb: TFormTwitchWeb
     Height = 25
     Top = 0
     Width = 75
-    Caption = '치지직 홈'
+    Caption = 'Home'
     TabOrder = 0
     OnClick = ButtonHomeClick
   end
@@ -36,7 +36,7 @@ object FormTwitchWeb: TFormTwitchWeb
     Top = 0
     Width = 56
     Anchors = [akTop, akRight]
-    Caption = '이동'
+    Caption = 'Go'
     TabOrder = 3
     OnClick = ButtonGoClick
   end
@@ -55,7 +55,7 @@ object FormTwitchWeb: TFormTwitchWeb
     Top = 0
     Width = 64
     Anchors = [akTop, akRight]
-    Caption = '채팅가기'
+    Caption = 'Go chat'
     TabOrder = 4
     OnClick = ButtonGoChatClick
   end
@@ -170,40 +170,40 @@ object FormTwitchWeb: TFormTwitchWeb
     Top = 83
     object ActionWSPort: TAction
       Category = 'WebSocket'
-      Caption = '웹소켓 포트 설정'
+      Caption = 'Set WebSocket port'
       OnExecute = ActionWSPortExecute
     end
     object ActionOpenChat: TAction
-      Caption = '채팅 파일 열기'
+      Caption = 'Open Chat'
       OnExecute = ActionOpenChatExecute
     end
     object ActionOpenNotify: TAction
-      Caption = '구독/도네이션 파일 열기'
+      Caption = 'Open notify'
       OnExecute = ActionOpenNotifyExecute
     end
     object ActionDebugLog: TAction
-      Caption = '디버그 로그 활성화'
+      Caption = 'Debug logging'
       OnExecute = ActionDebugLogExecute
     end
     object ActionChatTime: TAction
-      Caption = '시간 태그 추가'
+      Caption = 'Chat time'
       OnExecute = ActionChatTimeExecute
     end
     object ActionOpenChatFull: TAction
-      Caption = '채팅 리스트 열기'
+      Caption = 'Open Chat listing'
       OnExecute = ActionOpenChatFullExecute
     end
     object ActionWSockUnique: TAction
-      Caption = '단일 웹소켓 사용'
+      Caption = 'Use one  port'
       OnExecute = ActionWSockUniqueExecute
       OnUpdate = ActionWSockUniqueUpdate
     end
     object ActionOpenUserList: TAction
-      Caption = '채팅 유저'
+      Caption = 'Open chatting user'
       OnExecute = ActionOpenUserListExecute
     end
     object ActionLogging: TAction
-      Caption = '로깅'
+      Caption = 'Logging'
       Checked = True
       OnExecute = ActionLoggingExecute
     end
@@ -212,7 +212,7 @@ object FormTwitchWeb: TFormTwitchWeb
     Left = 200
     Top = 83
     object MenuItem1: TMenuItem
-      Caption = '웹소켓(&W)'
+      Caption = '&WebSocket'
       object MenuItem10: TMenuItem
         Action = ActionLogging
       end
@@ -221,7 +221,7 @@ object FormTwitchWeb: TFormTwitchWeb
       end
     end
     object MenuItem3: TMenuItem
-      Caption = '파일(&F)'
+      Caption = '&File'
       object MenuItem4: TMenuItem
         Action = ActionOpenChat
       end
@@ -236,7 +236,7 @@ object FormTwitchWeb: TFormTwitchWeb
       end
     end
     object MenuItem5: TMenuItem
-      Caption = '기타'
+      Caption = '&Misc'
       object MenuItem6: TMenuItem
         Action = ActionWSockUnique
       end
