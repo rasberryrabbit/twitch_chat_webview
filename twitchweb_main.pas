@@ -483,7 +483,7 @@ var
   cefVer: Cardinal;
 begin
   cefVer:=GetFileVersion('WebVew2Loader');
-  Caption:='TwitchWeb_WebView2'+RxVersionInfo1.FileVersion+' '+IntToHex(cefVer,8)+' @'+WSPortChat;
+  Caption:='TwitchChat_WebView '+RxVersionInfo1.FileVersion+' '+IntToHex(cefVer,8)+' @'+WSPortChat;
 end;
 
 procedure TFormTwitchWeb.SetUpWebSocketPort;
