@@ -4,10 +4,10 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <title>순위 추첨하기</title>
 <link rel="stylesheet" href="./jquery/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="style.css" />
-<link type="text/css" rel="stylesheet" href="stylevote.css" />
-<script src = "./jquery/jquery-3.3.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="twitch_chat.css" />
+<script src = "./jquery/jquery-3.7.1.min.js"></script>
 <script src = "./jquery/jquery-ui.js"></script>
+<link type="text/css" rel="stylesheet" href="stylevote.css" />
 <script>
 // 채팅 스크립트 준비
 try {
@@ -67,7 +67,7 @@ function updateitem(item, nid) {
                 //}, 200);
                 // 아이디 목록, 중복 불가
                 idlist[nid]=itn;
-                var newli="<li id=\"idlistli\">"+nid.substring(5)+"</li>";
+                var newli="<li id=\"idlistli\">"+nid+"</li>";
                 itid.append(newli);
             }
         }
@@ -147,28 +147,18 @@ function RemoveItem(name) {
 initlabels(true);
 var randomcolor=1;
 var makedisappear=0;
-var chatsock = new ReconnectingWebSocket("ws://localhost:8100","chat");
+var chatsock = new ReconnectingWebSocket("ws://localhost:61002","chat");
 chatsock.reconnectInterval=2000;
 chatsock.onmessage = function (event) {
     var div = $("#alertbox");
-    var temp=event.data;
-    // id and chat
-    var rex="([^\\:]+)\\:\\s(.+)";
-    var newid;
-    res=temp.match(rex);
-    if(res) {
-        temp=res[1]+' '+res[2];
-        newid='(twt)'+res[1];
-    }
-    // unique id
-    if(res) {
-        var check=res[2];
-        // 문자열을 체크하고 카운터를 올림
-        updateitem(check,newid);
-    }
+    var temp=$(event.data);
+    newid=temp.find('.chat-author__display-name').text();
+    newtext=temp.find('.text-fragment').text();
+    updateitem(newtext,newid);
+    console.log(newtext,newid);
     // show chat message. for debugging.
     if(script_debug) {
-        chatline=$('<li>'+temp+'</li>');
+        chatline=$('<li>'+event.data+'</li>');
         div.append(chatline);
         if (div.children('li').length>500) {
           div.children('li')[0].remove();

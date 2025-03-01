@@ -4,8 +4,8 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <title>Chat - Customer Module</title>
 <link rel="stylesheet" href="./jquery/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="style.css" />
-<script src = "./jquery/jquery-3.3.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="twitch_chat.css" />
+<script src = "./jquery/jquery-3.7.1.min.js"></script>
 <script src = "./jquery/jquery-ui.js"></script>
 <script>
 try {
@@ -37,7 +37,7 @@ $(document).ready(function(){
 //
 var randomcolor=1;
 var makedisappear=0;
-var chatsock = new ReconnectingWebSocket("ws://localhost:8098","chat");
+var chatsock = new ReconnectingWebSocket("ws://localhost:61003","chat");
 chatsock.reconnectInterval=2000;
 chatsock.onmessage = function (event) {
     var div = $("#alertbox");

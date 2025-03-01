@@ -4,10 +4,10 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <title>참여자 추첨하기</title>
 <link rel="stylesheet" href="./jquery/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="style.css" />
-<link type="text/css" rel="stylesheet" href="stylevote.css" />
-<script src = "./jquery/jquery-3.3.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="twitch_chat.css" />
+<script src = "./jquery/jquery-3.7.1.min.js"></script>
 <script src = "./jquery/jquery-ui.js"></script>
+<link type="text/css" rel="stylesheet" href="stylevote.css" />
 <script>
 // 채팅 스크립트 준비
 try {
@@ -169,7 +169,7 @@ function RemoveItem(name) {
 initlabels(true);
 var randomcolor=1;
 var makedisappear=0;
-var chatsock = new ReconnectingWebSocket("ws://localhost:8100","chat");
+var chatsock = new ReconnectingWebSocket("ws://localhost:61002","chat");
 chatsock.reconnectInterval=2000;
 chatsock.onmessage = function (event) {
     var div = $("#alertbox");
