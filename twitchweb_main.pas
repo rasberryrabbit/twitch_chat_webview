@@ -126,9 +126,11 @@ uses
 const
   MaxLength = 2048;
   cqueryjs = 'var obser=document.querySelector("div.chat-scrollable-area__message-container");'+
+             'var observer;'+
              'if(obser) {'+
+             'if(observer) { observer.disconnect(); };'+
              'window.chrome.webview.postMessage("!Observer Start!");'+
-             'const observer = new MutationObserver((mutations) => {'+
+             'var observer = new MutationObserver((mutations) => {'+
              'mutations.forEach(mutat => {'+
              'mutat.addedNodes.forEach(node => {'+
              'window.chrome.webview.postMessage(node.outerHTML);'+
@@ -430,9 +432,10 @@ begin
     exit;
   buf:=res;
   CoTaskMemFree(res);
-  if (not observer_started) and (buf='!Observer Start!') then
+  if not observer_started then
   begin
-    observer_started:=True;
+    if buf='!Observer Start!' then
+      observer_started:=True;
   end
   else
   begin
