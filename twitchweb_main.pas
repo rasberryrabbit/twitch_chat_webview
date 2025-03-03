@@ -19,6 +19,7 @@ type
   { TFormTwitchWeb }
 
   TFormTwitchWeb = class(TForm)
+    ActionDisableMention: TAction;
     ActionLogging: TAction;
     ActionOpenUserList: TAction;
     ActionWSockUnique: TAction;
@@ -39,6 +40,7 @@ type
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     MenuItem10: TMenuItem;
+    MenuItem11: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
@@ -57,6 +59,7 @@ type
     XMLPropStorage1: TXMLPropStorage;
     procedure ActionChatTimeExecute(Sender: TObject);
     procedure ActionDebugLogExecute(Sender: TObject);
+    procedure ActionDisableMentionExecute(Sender: TObject);
     procedure ActionLoggingExecute(Sender: TObject);
     procedure ActionOpenChatExecute(Sender: TObject);
     procedure ActionOpenChatFullExecute(Sender: TObject);
@@ -150,6 +153,7 @@ const
              '}';
 
   syschat_str = 'user-notice-line';
+  mention_str = 'mention-fragment';
 
   TwitchURL ='www.twitch.tv/';
 
@@ -171,6 +175,7 @@ var
   stripusertooltip: TRegExpr;
   PageLoaded: Boolean = False;
   observer_started: Boolean = False;
+  disable_mention: Boolean = True;
 
 
 { TFormTwitchWeb }
@@ -249,6 +254,12 @@ begin
   ActionDebugLog.Checked:=not ActionDebugLog.Checked;
 end;
 
+procedure TFormTwitchWeb.ActionDisableMentionExecute(Sender: TObject);
+begin
+  ActionDisableMention.Checked:=not ActionDisableMention.Checked;
+  disable_mention:=ActionDisableMention.Checked;
+end;
+
 procedure TFormTwitchWeb.ActionLoggingExecute(Sender: TObject);
 begin
   ActionLogging.Checked:=not ActionLogging.Checked;
@@ -321,6 +332,7 @@ begin
   XMLConfig1.SetValue('CHAT/CHAT',UTF8Decode(chatlog_chatonly));
   XMLConfig1.SetValue('CHAT/DONATION',UTF8Decode(chatlog_donation));
   XMLConfig1.SetValue('CHAT/USERID',UTF8Decode(chatlog_userid));
+  XMLConfig1.SetValue('CHAT/DMENTION',disable_mention);
   if XMLConfig1.Modified then
     XMLConfig1.SaveToFile('config.xml');
   Sleep(200);
@@ -337,8 +349,10 @@ begin
   WSPortChat:=XMLConfig1.GetValue('WS/PORT','61002');
   WSPortSys:=XMLConfig1.GetValue('WS/PORTSYS','61003');
   WSPortUnique:=XMLConfig1.GetValue('WS/UNIQUE',WSPortUnique);
+  disable_mention:=XMLConfig1.GetValue('CHAT/DMENTION',disable_mention);
   ActionChatTime.Checked:=IncludeChatTime;
   ActionWSockUnique.Checked:=WSPortUnique;
+  ActionDisableMention.Checked:=disable_mention;
 
   chatlog_full:=UTF8Encode(XMLConfig1.GetValue('CHAT/FULL',UTF8Decode(chatlog_full)));
   chatlog_full_unique:=UTF8Encode(XMLConfig1.GetValue('CHAT/FULLUNIQUE',UTF8Decode(chatlog_full_unique)));
@@ -446,7 +460,8 @@ begin
         SockServerChat.BroadcastMsg(UTF8Encode(buf));
     end
     else
-      SockServerChat.BroadcastMsg(UTF8Encode(buf));
+      if (not disable_mention) or (disable_mention and (Pos(mention_str,buf)=0)) then
+        SockServerChat.BroadcastMsg(UTF8Encode(buf));
   end;
 end;
 
