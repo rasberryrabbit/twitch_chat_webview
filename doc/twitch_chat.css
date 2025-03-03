@@ -285,6 +285,12 @@ a {
     vertical-align: sub;
 }
 
+.chat-line__message-container p {
+    display: inline;
+    padding-left: 3px;
+    vertical-align: sub;
+}
+
 .chat-line__message-body--highlighted {
 }
 
