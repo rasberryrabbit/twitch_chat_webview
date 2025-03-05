@@ -462,7 +462,7 @@ begin
   CoTaskMemFree(res);
   if not observer_started then
   begin
-    if buf='!Observer Start!' then
+    {if buf='!Observer Start!' then}
       observer_started:=True;
   end
   else
