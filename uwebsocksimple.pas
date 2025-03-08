@@ -19,12 +19,10 @@ type
       fServer:TWebSocketServer;
     protected
     public
-
       constructor Create(const Port:string);
       destructor Destroy; override;
 
       procedure BroadcastMsg(const msg: RawByteString);
-      procedure AddChatbuf(const msg: RawByteString);
   end;
 
   { TWebSocketProtocolEcho }
@@ -51,7 +49,6 @@ begin
   focBinary, focText :
       if Assigned(Server) then begin
         Server.BroadcastMsg(Frame.payload);
-        Server.AddChatbuf(Frame.payload);
       end;
   end;
 end;
@@ -83,11 +80,6 @@ begin
   outmsg.opcode:=focText;
   outmsg.payload:=msg;
   fServer.WebSocketBroadcast(outmsg);
-end;
-
-procedure TSimpleWebsocketServer.AddChatbuf(const msg: RawByteString);
-begin
-
 end;
 
 
