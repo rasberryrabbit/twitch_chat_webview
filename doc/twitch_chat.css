@@ -165,7 +165,7 @@ a {
     padding-left: 3px;
     display: inline-block;
     position: relative;
-    top: -4px;
+    top: -2px;
 }
 
 .chat-line--inline .chat-line__username {
