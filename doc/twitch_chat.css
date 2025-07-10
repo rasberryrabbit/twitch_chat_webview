@@ -236,7 +236,7 @@ a {
 }
 
 .text-fragment {
-    display: inline;
+    display: inline-block;
     position: relative;
     top: -2px;
 }
