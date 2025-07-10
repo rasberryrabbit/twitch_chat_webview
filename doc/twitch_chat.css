@@ -108,6 +108,7 @@ a {
 .chat-line__username-container span {
     position: relative;
     top: 1px;
+    display: inline-flex;
 }
 
 /* user icon */
