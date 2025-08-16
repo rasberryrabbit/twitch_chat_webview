@@ -16,7 +16,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="3"/>
+      <BuildNr Value="5"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -100,8 +100,8 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <Libraries Value="C:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;C:\fpcupdeluxe\extras\mormot\static\i386-win32\"/>
-      <OtherUnitFiles Value="C:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;C:\fpcupdeluxe\extras\mormot\src\net\;C:\fpcupdeluxe\extras\mormot\src\crypt\;C:\fpcupdeluxe\extras\mormot\src\core\;C:\fpcupdeluxe\extras\WebView4Delphi\packages\"/>
+      <Libraries Value="F:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;F:\fpcupdeluxe\extras\mormot\static\i386-win32\"/>
+      <OtherUnitFiles Value="F:\fpcupdeluxe\extras\mormot\packages\lazarus\lib\i386-win32\;F:\fpcupdeluxe\extras\mormot\src\net\;F:\fpcupdeluxe\extras\mormot\src\crypt\;F:\fpcupdeluxe\extras\mormot\src\core\;F:\fpcupdeluxe\extras\WebView4Delphi\packages\"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>
