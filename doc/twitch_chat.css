@@ -293,6 +293,10 @@ a {
     display: inline-block;
 }
 
+.chat-image-wrapper > div span {
+	display: flex;
+}
+
 .chat-line__message-container {
     /* padding-left: 3px; */
     vertical-align: sub;
@@ -338,6 +342,11 @@ a {
 .user-notice-line .tw-svg {
    position: relative;
    top: 5px;
+}
+
+/* gift message */
+.Layout-sc-1xcs6mc-0.glSYqJ {
+    display: inline-block;
 }
 
 .chat-card {
