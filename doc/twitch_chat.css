@@ -52,6 +52,7 @@ figure {
     top: -3px;
     padding-left: 2px;
     display: inline-flex;
+    color: highlight;
 }
 
 .tw-svg {
