@@ -81,6 +81,14 @@ figure {
     margin: 1px;
 }
 
+.Layout-sc-1xcs6mc-0.fHdBNk {
+    display: inline-flex;
+}
+
+p.CoreText-sc-1txzju1-0.cWFBTs {
+    display: inline;
+}
+
 .user-notice-line p {
     display: inline-block;
 }
@@ -90,7 +98,6 @@ a {
     text-decoration: none;
 }
 
-/* ì˜ë¬¸ ì•„ì´ë””. ë³´ì´ì§€ ì•Šê²Œ ì œê±° */
 .chat-author__intl-login {
     display: none;
 } 
