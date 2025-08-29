@@ -194,7 +194,7 @@ object FormTwitchWeb: TFormTwitchWeb
       OnExecute = ActionOpenChatFullExecute
     end
     object ActionWSockUnique: TAction
-      Caption = 'Use one  port'
+      Caption = 'Use unique port'
       OnExecute = ActionWSockUniqueExecute
       OnUpdate = ActionWSockUniqueUpdate
     end
